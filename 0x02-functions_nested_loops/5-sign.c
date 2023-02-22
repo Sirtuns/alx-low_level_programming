@@ -1,10 +1,10 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_sign - Entr point
+ * print_sign - Enter point
  * @n: carrier variable
  * Description: prints the sign of a number
- * Return: 1 if n>0, 0 if n == 0, -1 if n<0
+ * Return: 1 if n > 0, 0 if n == 0, -1 if n < 0
  */
 
 int print_sign(int n)
