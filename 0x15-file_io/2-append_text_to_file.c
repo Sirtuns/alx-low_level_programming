@@ -7,13 +7,13 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fild = 0, chk = 0, i = 0;
+	int fileid = 0, check = 0, i = 0;
 
 	if (!filename)
 		return (-1);
 
-	fild = open(filename, O_WRONLY | O_APPEND);
-	if (fild < 0)
+	fileid = open(filename, O_WRONLY | O_APPEND);
+	if (fileid < 0)
 		return (-1);
 
 	if (text_content)
@@ -21,10 +21,10 @@ int append_text_to_file(const char *filename, char *text_content)
 		while (text_content[i])
 			i++;
 
-		chk = write(fild, text_content, i);
-		if (chk < 0)
+		check = write(fileid, text_content, i);
+		if (check < 0)
 		return (-1);
 	}
-	close(fild);
+	close(fileid);
 	return (1);
 }
