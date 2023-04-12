@@ -7,7 +7,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t fild = 0, chk = 0, i = 0;
+	ssize_t fileid = 0, check = 0, i = 0;
 
 	if (!filename)
 		return (-1);
@@ -15,16 +15,16 @@ int create_file(const char *filename, char *text_content)
 	if (!text_content)
 		text_content = "";
 
-	fild = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 00600);
-	if (fild < 0)
+	fileid = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 00600);
+	if (fileid < 0)
 		return (-1);
 
 	while (text_content[i])
 		i++;
-	chk = write(fild, text_content, i);
-	if (chk < 0)
+	check = write(fileid, text_content, i);
+	if (check < 0)
 		return (-1);
 
-	close(fild);
+	close(fileid);
 	return (1);
 }
